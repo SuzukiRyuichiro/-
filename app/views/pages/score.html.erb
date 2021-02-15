@@ -1,0 +1,15 @@
+<div class="container p-5">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h1>score</h1>
+      <%= @message %>
+    </div>
+  </div>
+  <div class="row justify-content-center definition m-5">
+  </div>
+</div>
+<%= javascript_pack_tag 'result' %>
+<script>
+  userinput = "<%= params[:userinput] %>";
+  console.log(userinput);
+</script>

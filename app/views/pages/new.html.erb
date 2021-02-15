@@ -1,0 +1,24 @@
+<div class="container p-5">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <ul>
+        <% @letters.each do |letter| %>
+        <div class="letter-box d-flex flex-row">
+          <button class="btn btn-primary"><%= letter %></button>
+        </div>
+        <% end %>
+      </ul>
+    </div>
+    <div class="row justify-content-center">
+    <div class="col-8">
+      <form action="score" method="POST">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= hidden_field_tag :letters, @letters %>
+        <input type="text" name="userinput" id="userinput" placeholder="Word?" value="">
+        <input type="submit" class="btn btn-primary" name="">
+      </form>
+    </div>
+  </div>
+  </div>
+</div>
+<%= javascript_pack_tag 'my_js' %>
